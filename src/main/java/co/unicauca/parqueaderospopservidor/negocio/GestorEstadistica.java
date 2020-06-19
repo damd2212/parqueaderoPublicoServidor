@@ -17,7 +17,7 @@ public class GestorEstadistica {
     
     Conexion cn = new Conexion();
     
-    public ArrayList<EstadisticaIngreso> consultarEstadistica(String Fecha)throws ClassNotFoundException,SQLException{
+    public ArrayList<EstadisticaIngreso> consultarEstadistica(String Fecha,String nitParqueadero)throws ClassNotFoundException,SQLException{
         ArrayList<EstadisticaIngreso> listaEstadistica = new ArrayList();
         cn.conectar();
         String sql = "SELECT " + 
@@ -25,7 +25,7 @@ public class GestorEstadistica {
                 "HOUR(regHoraYFechaEntrada) Hora," +
                 "COUNT(*) ConteoTotal " + 
                 "FROM registrarvehiculo " + 
-                "WHERE DATE(regHoraYFechaEntrada) IS NOT NULL AND DATE(regHoraYFechaEntrada)='"+ Fecha + "' " + 
+                "WHERE DATE(regHoraYFechaEntrada) IS NOT NULL AND DATE(regHoraYFechaEntrada)='"+ Fecha + "' AND regNitParqueadero='"  + nitParqueadero + "' " +
                 "GROUP BY CONCAT(DATE(regHoraYFechaEntrada),HOUR(regHoraYFechaEntrada)) " + 
                 "ORDER BY HOUR(regHoraYFechaEntrada) ASC";
         System.out.println(sql);

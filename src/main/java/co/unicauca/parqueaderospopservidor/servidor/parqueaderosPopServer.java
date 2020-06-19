@@ -235,7 +235,7 @@ public class parqueaderosPopServer implements Runnable{
                 
                 break;
             case "consultarEstadistica":
-                List<EstadisticaIngreso> listaEst = gestorEst.consultarEstadistica(parametros[1]);
+                List<EstadisticaIngreso> listaEst = gestorEst.consultarEstadistica(parametros[1],parametros[2]);
                 if (listaEst.isEmpty()) {
                     salida.println("NO_ENCONTRADO");
                 }else{
