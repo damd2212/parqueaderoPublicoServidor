@@ -10,23 +10,26 @@ package co.unicauca.parqueaderospopservidor.negocio;
  * @author danny
  */
 public class EstadisticaIngreso {
-    
+    //Atributos de la clase estadistica
     private String Fecha;
     private String Hora;
     private String ConteoTotal;
-
+    
+    //Constructor parametizado
     public EstadisticaIngreso(String Fecha, String Hora, String ConteoTotal) {
         this.Fecha = Fecha;
         this.Hora = Hora;
         this.ConteoTotal = ConteoTotal;
     }
     
+    //Constructor sin parametrizar
     public EstadisticaIngreso(){
         Fecha="";
         Hora="";
         ConteoTotal="";
     }
-
+    
+    //Getters y Setters de la clase estadistica para acceder a sus valores
     public String getFecha() {
         return Fecha;
     }

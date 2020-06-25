@@ -371,7 +371,7 @@ public class parqueaderosPopServer implements Runnable{
         jsonobj.addProperty("ValorTotal", tari.getValorTotal());
         return jsonobj.toString();
     }
-    
+    //Convierte el objeto Estadistica a Json
     private String parseToJSONEstadistica(EstadisticaIngreso est){
        JsonObject jsonobj = new JsonObject();
        
@@ -381,7 +381,7 @@ public class parqueaderosPopServer implements Runnable{
        
        return jsonobj.toString();
     }
-    
+    //Convierte la lista con objetos estadistica a Json
     private String listaParsetoJSON(ArrayList<EstadisticaIngreso> lista){
         
         String resultado="";
@@ -393,6 +393,7 @@ public class parqueaderosPopServer implements Runnable{
         return resultado;
     }
     
+    //Convierte la lista con objetos estadistica a Json
     private String listaParsetoJSON2(List<EstadisticaIngreso> lista){
         
         JsonObject jsonobj = new JsonObject();

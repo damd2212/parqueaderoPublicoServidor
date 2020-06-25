@@ -35,7 +35,7 @@ public class GestorParqueadero {
         cn.desconectar();
         return par;
     }
-    
+    //Metodo para actualizar los puestos libres donde se le resta uno y los puestos ocupados donde se le suma uno
     public void actualizarIngreso(String nitParqueadero)throws ClassNotFoundException,SQLException{
         cn.conectar();
         String sql = "UPDATE parqueadero SET puestosLibres = puestosLibres - 1,puestosOcupados = puestosOcupados + 1 where nitParqueadero ='"+nitParqueadero+"'";
@@ -43,6 +43,8 @@ public class GestorParqueadero {
         cn.actualizar(sql);
         cn.desconectar();
     }
+    
+    //Metodo para actualizar los puestos libres donde se le suma uno y los puestos ocupados donde se le resta uno
     public void actualizarSalida(String nitParqueadero)throws ClassNotFoundException,SQLException{
         cn.conectar();
         String sql = "UPDATE parqueadero SET puestosLibres = puestosLibres + 1,puestosOcupados = puestosOcupados - 1 where nitParqueadero ='"+nitParqueadero+"'";

@@ -17,6 +17,7 @@ public class GestorEstadistica {
     
     Conexion cn = new Conexion();
     
+    //Metodo que contiene una lista para guardar todos los resultados que se obtengan de la consulta que se va a realizar    
     public ArrayList<EstadisticaIngreso> consultarEstadistica(String Fecha,String nitParqueadero)throws ClassNotFoundException,SQLException{
         ArrayList<EstadisticaIngreso> listaEstadistica = new ArrayList();
         cn.conectar();
